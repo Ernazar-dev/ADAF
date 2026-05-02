@@ -14,14 +14,20 @@ import { ipBlockMiddleware } from "../middleware/ipBlock.js";
 
 const router = Router();
 
-// ─── Ochiq (auth talab qilmaydigan) endpoint'lar ─────────────────────────────
-
-router.use("/events", eventsRouter);
+// ─── IP bloklashdan ozod: monitoring va admin boshqaruvi ─────────────────────
+// Health: Render monitoring uchun har doim ochiq
+// blocked-ips: admin IP ni bloklashdan chiqara olsin (requireAuth himoya qiladi)
 router.use(healthRouter);
+router.use("/blocked-ips", requireAuth, blockedIpsRouter);
 
-// Bloklangan IP lar /auth va /fake ga kira olmaydi
-router.use("/auth", ipBlockMiddleware, authRouter);
-router.use("/fake", ipBlockMiddleware, fakeRouter);
+// ─── IP bloklash: qolgan barcha endpointlar ───────────────────────────────────
+// Bloklangan IP bu qatordan pastdagi hech bir routga kira olmaydi
+router.use(ipBlockMiddleware);
+
+// ─── Ochiq (login va honeypot) ────────────────────────────────────────────────
+router.use("/events", eventsRouter);
+router.use("/auth", authRouter);
+router.use("/fake", fakeRouter);
 
 // ─── Himoyalangan endpoint'lar (token talab qilinadi) ────────────────────────
 router.use("/analyze", requireAuth, analyzeRouter);
@@ -29,6 +35,5 @@ router.use("/attacks", requireAuth, attacksRouter);
 router.use("/stats", requireAuth, statsRouter);
 router.use("/sessions", requireAuth, sessionsRouter);
 router.use("/settings", requireAuth, settingsRouter);
-router.use("/blocked-ips", requireAuth, blockedIpsRouter);
 
 export default router;

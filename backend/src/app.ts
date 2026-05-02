@@ -2,7 +2,6 @@ import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import router from "./routes/index.js";
 import { logger } from "./lib/logger.js";
-import { ipBlockMiddleware } from "./middleware/ipBlock.js";
 
 const app = express();
 
@@ -35,9 +34,6 @@ app.use((_req, res, next) => {
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
   next();
 });
-
-// ─── IP bloklash ─────────────────────────────────────────────────────────────
-app.use(ipBlockMiddleware);
 
 // ─── Body parsers ─────────────────────────────────────────────────────────────
 app.use(express.json({ limit: "512kb" }));
