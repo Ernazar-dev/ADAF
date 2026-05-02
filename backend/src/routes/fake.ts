@@ -37,10 +37,7 @@ router.post("/login", async (req, res) => {
     }
 
     const { username, password } = parsed.data;
-    const ip =
-      (req.headers["x-forwarded-for"] as string)?.split(",")[0]?.trim() ??
-      req.ip ??
-      "unknown";
+    const ip = req.ip ?? "unknown";
 
     const { aiScore, attackType, detectedPatterns } = analyzeInput(`${username} ${password}`);
     const behaviorScore = trackRequest(ip, true);

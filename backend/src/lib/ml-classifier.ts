@@ -126,8 +126,11 @@ export function classifyText(text: string, model: ModelData): ClassifyResult {
 }
 
 export function mlScoreToRisk(result: ClassifyResult): number {
-  if (!result.isAttack) return Math.round(result.confidence * 0.2); // clean: 0–20
-  // Attack: scale confidence (50–100) by attack type severity
+  // Clean: 0–20
+  if (!result.isAttack) return Math.round(result.confidence * 0.2);
+  // Attack bo'lishi uchun ishonch yuqori bo'lishi shart (>= 70%), aks holda past ball
+  // Bu imbalanced dataset (80% attack) dan keladigan yolg'on ijobiylarni kamaytiradi
+  if (result.confidence < 70) return Math.round(result.confidence * 0.4); // 0–28
   const severity: Record<string, number> = { sqli: 1.0, cmd_injection: 1.0, xss: 0.85, path_traversal: 0.9 };
   const factor = severity[result.predictedClass] ?? 0.8;
   return Math.min(100, Math.round(50 + result.confidence * factor * 0.5));

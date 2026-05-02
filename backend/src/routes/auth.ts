@@ -20,14 +20,6 @@ export function hashPassword(password: string): string {
   return crypto.pbkdf2Sync(password, HASH_SALT, 100_000, 64, "sha512").toString("hex");
 }
 
-// ─── Hujum belgilari ──────────────────────────────────────────────────────────
-const ATTACK_CHARS = /[<>'\";|`$(){}=\\/%]/;
-const ATTACK_KEYWORDS = /\b(SELECT|INSERT|UPDATE|DELETE|DROP|UNION|CREATE|EXEC|EXECUTE|SLEEP|BENCHMARK|LOAD_FILE|script|alert|onerror|onload|onclick|javascript|vbscript|document|window|eval|whoami|passwd|shadow|system32)\b/i;
-
-function hasAttackSignals(text: string): boolean {
-  return ATTACK_CHARS.test(text) || ATTACK_KEYWORDS.test(text);
-}
-
 function detectAttack(username: string, password: string): {
   isAttack: boolean;
   aiScore: number;
@@ -37,20 +29,18 @@ function detectAttack(username: string, password: string): {
   const uResult = analyzeInput(username);
   const pResult = analyzeInput(password);
   const dominant = uResult.aiScore >= pResult.aiScore ? uResult : pResult;
-  const dominantText = uResult.aiScore >= pResult.aiScore ? username : password;
 
   const allPatterns = [...uResult.detectedPatterns, ...pResult.detectedPatterns]
     .filter((v, i, a) => a.indexOf(v) === i).slice(0, 6);
 
-  const regexFound = dominant.detectionMethod === "regex" || dominant.detectionMethod === "hybrid";
-  const mlOnlyAttack =
-    !regexFound &&
-    dominant.aiScore >= 65 &&
-    dominant.attackType !== "Clean" &&
-    hasAttackSignals(dominantText);
+  // Faqat regex topgan hujumlar haqiqiy hujum hisoblanadi.
+  // ML yolg'iz xato ijobiy natija beradi (datasetda 80% attack, 20% clean — model biased).
+  const isAttack =
+    uResult.detectionMethod === "regex" || uResult.detectionMethod === "hybrid" ||
+    pResult.detectionMethod === "regex" || pResult.detectionMethod === "hybrid";
 
   return {
-    isAttack: regexFound || mlOnlyAttack,
+    isAttack,
     aiScore: dominant.aiScore,
     attackType: dominant.attackType,
     detectedPatterns: allPatterns,
@@ -119,9 +109,7 @@ router.post("/login", async (req, res) => {
     }
 
     const { username, password } = parsed.data;
-    const ip =
-      (req.headers["x-forwarded-for"] as string)?.split(",")[0]?.trim() ??
-      req.socket.remoteAddress ?? "unknown";
+    const ip = req.ip ?? req.socket.remoteAddress ?? "unknown";
 
     const detection = detectAttack(username, password);
 

@@ -6,6 +6,9 @@ import { ipBlockMiddleware } from "./middleware/ipBlock.js";
 
 const app = express();
 
+// Render/proxy orqasida ishlaydi — X-Forwarded-For dan haqiqiy IP olinadi
+app.set("trust proxy", 1);
+
 // ─── CORS ────────────────────────────────────────────────────────────────────
 const ALLOWED_ORIGINS = (process.env.CORS_ORIGINS ?? "http://localhost:3000")
   .split(",")
