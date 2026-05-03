@@ -1,14 +1,13 @@
 /**
  * NexaCore Financial — Minimal Dashboard
- *
- * Yangi minimalistik dizayn:
- * - Tinch oq fon, yumshoq kulrang chegaralar
- * - Linear / Vercel / Stripe uslubidagi real dashboard ko'rinishi
- * - Funksionallik va fake ma'lumotlar saqlangan
- * - Jonli tranzaksiyalar, log, sessiyalar — barchasi ishlaydi
+ * TUZATILGAN versiya:
+ * - useGetFakeData hook useEffect tashqarisiga chiqarildi
+ * - aumChartData useMemo ga o'ralgan
+ * - fmtTime() real-time uchun useState + setInterval ga o'zgartirildi
+ * - txnCounter ref genTxnId() bilan to'g'ri bog'landi
  */
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import {
   Layout,
   Menu,
@@ -61,6 +60,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useGetFakeData } from "../lib/api";
+
 const { Sider, Content, Header } = Layout;
 const { Text, Title } = Typography;
 
@@ -163,10 +163,6 @@ const LOG_TEMPLATES = [
   "Firewall rule updated: blocked IP 185.220.101.x/24",
 ];
 
-function genTxnId() {
-  return "TXN-" + (47822 + Math.floor(Math.random() * 100));
-}
-
 function fmtAmount(n: number) {
   return n.toLocaleString("en-US", {
     style: "currency",
@@ -175,44 +171,11 @@ function fmtAmount(n: number) {
   });
 }
 
-function fmtCompact(n: number) {
-  if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(2)}B`;
-  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(2)}M`;
-  if (n >= 1_000) return `$${(n / 1_000).toFixed(1)}K`;
-  return `$${n}`;
-}
-
 function fmtNow() {
   return new Date().toISOString().replace("T", " ").substring(0, 19);
 }
 
-function fmtTime() {
-  return new Date().toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  });
-}
-
-function genLiveTxn() {
-  const t =
-    LIVE_TXN_TEMPLATES[Math.floor(Math.random() * LIVE_TXN_TEMPLATES.length)];
-  const amount = t.min + Math.floor(Math.random() * (t.max - t.min));
-  return {
-    id: genTxnId(),
-    from: t.from,
-    to: t.to,
-    amount,
-    currency: "USD",
-    date: fmtNow(),
-    status: Math.random() > 0.15 ? "completed" : "pending",
-    flag: t.flag,
-    category: t.cat,
-    ref: "LIVE-" + Math.random().toString(36).substring(2, 8).toUpperCase(),
-  };
-}
-
-// ─── Tiny inline sparkline (no external deps) ────────────────────────────────
+// ─── Tiny inline sparkline ────────────────────────────────────────────────────
 function Sparkline({
   data,
   color = T.text,
@@ -398,12 +361,15 @@ function SectionHeader({
   );
 }
 
-// ─── Main component ─────────────────────────────────────────────────────────
+// ─── Main component ──────────────────────────────────────────────────────────
 export default function FakeDashboard() {
   const { logout } = useAuth();
   const [, setLocation] = useLocation();
   const queryClient = useQueryClient();
   const { modal } = App.useApp();
+
+  // ✅ FIX 1: Hook komponent darajasida — useEffect TASHQARISIDA
+  useGetFakeData({ query: { refetchInterval: 3000 } });
 
   const [activeKey, setActiveKey] = useState("dashboard");
   const [selectedUser, setSelectedUser] = useState<any>(null);
@@ -435,10 +401,57 @@ export default function FakeDashboard() {
       (_, i) => 110 + Math.cos(i / 4) * 18 + Math.random() * 8,
     ),
   );
+
+  // ✅ FIX 2: txnCounter ref genTxnId bilan to'g'ri ishlatildi
   const txnCounter = useRef(47822);
 
-  // AUM trend — 12 oylik area chart uchun
-  const aumChartData = (() => {
+  function genTxnId() {
+    txnCounter.current += 1;
+    return "TXN-" + txnCounter.current;
+  }
+
+  function genLiveTxn() {
+    const t =
+      LIVE_TXN_TEMPLATES[Math.floor(Math.random() * LIVE_TXN_TEMPLATES.length)];
+    const amount = t.min + Math.floor(Math.random() * (t.max - t.min));
+    return {
+      id: genTxnId(),
+      from: t.from,
+      to: t.to,
+      amount,
+      currency: "USD",
+      date: fmtNow(),
+      status: Math.random() > 0.15 ? "completed" : "pending",
+      flag: t.flag,
+      category: t.cat,
+      ref: "LIVE-" + Math.random().toString(36).substring(2, 8).toUpperCase(),
+    };
+  }
+
+  // ✅ FIX 3: fmtTime real-time — useState + setInterval
+  const [currentTime, setCurrentTime] = useState(() =>
+    new Date().toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }),
+  );
+
+  useEffect(() => {
+    const clock = setInterval(() => {
+      setCurrentTime(
+        new Date().toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        }),
+      );
+    }, 30000);
+    return () => clearInterval(clock);
+  }, []);
+
+  // ✅ FIX 4: aumChartData useMemo ga o'ralgan — har render da qayta hisoblanmaydi
+  const aumChartData = useMemo(() => {
     const months = [
       "May",
       "Jun",
@@ -458,13 +471,13 @@ export default function FakeDashboard() {
       val = Math.round(val + (Math.random() * 260 - 70));
       return { month: m, aum: val, target: Math.round(val * 0.965 + 130) };
     });
-  })();
+  }, []); // Faqat bir marta hisoblanadi
 
+  // ✅ FIX 5: useEffect ichida faqat setInterval — hook yo'q
   useEffect(() => {
     const interval = setInterval(
       () => {
         const newTxn = genLiveTxn();
-        txnCounter.current++;
 
         setLiveTxns((prev) => [newTxn, ...prev.slice(0, 19)]);
         setServerLoad((prev) =>
@@ -473,7 +486,6 @@ export default function FakeDashboard() {
         setActiveSessions((prev) =>
           Math.max(90, Math.min(180, prev + Math.floor(Math.random() * 6 - 3))),
         );
-
         setAumSpark((prev) => [
           ...prev.slice(1),
           prev[prev.length - 1] + (Math.random() * 40 - 18),
@@ -499,10 +511,9 @@ export default function FakeDashboard() {
       },
       8000 + Math.random() * 7000,
     );
-    // IP bloklangan-bloqlanmaganligini har 8 sekundda tekshiradi
-    useGetFakeData({ query: { refetchInterval: 3000 } });
+
     return () => clearInterval(interval);
-  }, []);
+  }, []); // genLiveTxn ref orqali ishlaydi, dependency kerak emas
 
   const handleLogout = () => {
     modal.confirm({
@@ -554,14 +565,13 @@ export default function FakeDashboard() {
     { key: "settings", icon: <SettingOutlined />, label: "Settings" },
   ];
 
-  // ─── DASHBOARD (page 1) ──────────────────────────────────────────────────
+  // ─── DASHBOARD ──────────────────────────────────────────────────────────────
   const renderDashboard = () => {
     const txnLast24h = liveTxns.length;
     const flaggedCount = liveTxns.filter((t) => t.flag).length;
 
     return (
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
-        {/* Page heading */}
         <div style={{ marginBottom: 24 }}>
           <div
             style={{
@@ -578,7 +588,6 @@ export default function FakeDashboard() {
           </div>
         </div>
 
-        {/* Metric row */}
         <Row gutter={[16, 16]} style={{ marginBottom: 16 }}>
           <Col xs={24} sm={12} lg={6}>
             <MetricCard
@@ -621,7 +630,6 @@ export default function FakeDashboard() {
           </Col>
         </Row>
 
-        {/* Main grid */}
         <Row gutter={[16, 16]}>
           {/* Live Transactions */}
           <Col xs={24} lg={16}>
@@ -888,7 +896,6 @@ export default function FakeDashboard() {
               </div>
             </div>
 
-            {/* CPU / Server load */}
             <div
               style={{
                 background: T.panel,
@@ -969,7 +976,6 @@ export default function FakeDashboard() {
           </Col>
         </Row>
 
-        {/* Bottom row: quick stats / who's online */}
         <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
           <Col xs={24} lg={12}>
             <div
@@ -1167,7 +1173,7 @@ export default function FakeDashboard() {
     );
   };
 
-  // ─── Other tabs (kept simple, same minimal style) ────────────────────────
+  // ─── USERS ───────────────────────────────────────────────────────────────────
   const renderUsers = () => (
     <div
       style={{
@@ -1322,6 +1328,7 @@ export default function FakeDashboard() {
     </div>
   );
 
+  // ─── FINANCE ─────────────────────────────────────────────────────────────────
   const renderFinance = () => (
     <div style={{ maxWidth: 1320, margin: "0 auto" }}>
       <div
@@ -1591,6 +1598,7 @@ export default function FakeDashboard() {
     </div>
   );
 
+  // ─── DATABASE ────────────────────────────────────────────────────────────────
   const renderDatabase = () => (
     <div
       style={{
@@ -1643,7 +1651,7 @@ export default function FakeDashboard() {
             <br />
             -------
             <br />
-            {`${String(liveTxns.length).padStart(6)}`}
+            {String(liveTxns.length).padStart(6)}
             <br />
             (1 row)
           </div>
@@ -1723,7 +1731,6 @@ export default function FakeDashboard() {
           gap: 16,
         }}
       >
-        {/* Metric cards */}
         <Row gutter={[16, 16]}>
           {[
             {
@@ -1794,7 +1801,6 @@ export default function FakeDashboard() {
           ))}
         </Row>
 
-        {/* Services table */}
         <div
           style={{
             background: T.panel,
@@ -1969,7 +1975,6 @@ export default function FakeDashboard() {
           gap: 16,
         }}
       >
-        {/* General */}
         <div
           style={{
             background: T.panel,
@@ -2058,7 +2063,6 @@ export default function FakeDashboard() {
           </div>
         </div>
 
-        {/* API Keys */}
         <div
           style={{
             background: T.panel,
@@ -2164,7 +2168,6 @@ export default function FakeDashboard() {
           </div>
         </div>
 
-        {/* Notifications */}
         <div
           style={{
             background: T.panel,
@@ -2295,24 +2298,16 @@ export default function FakeDashboard() {
           border-bottom: 1px solid ${T.borderSoft} !important;
           padding: 12px 14px !important;
         }
-        .ant-table-tbody > tr:hover > td {
-          background: ${T.bg} !important;
-        }
-        .ant-table-tbody > tr:last-child > td {
-          border-bottom: none !important;
-        }
+        .ant-table-tbody > tr:hover > td { background: ${T.bg} !important; }
+        .ant-table-tbody > tr:last-child > td { border-bottom: none !important; }
       `}</style>
 
       <Layout style={{ height: "100vh", overflow: "hidden", background: T.bg }}>
         <Sider
           width={232}
-          style={{
-            background: T.panel,
-            borderRight: `1px solid ${T.border}`,
-          }}
+          style={{ background: T.panel, borderRight: `1px solid ${T.border}` }}
           theme="light"
         >
-          {/* Brand */}
           <div style={{ padding: "20px 20px 16px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <div
@@ -2350,7 +2345,6 @@ export default function FakeDashboard() {
             </div>
           </div>
 
-          {/* Section label */}
           <div
             style={{
               padding: "12px 20px 6px",
@@ -2373,7 +2367,6 @@ export default function FakeDashboard() {
             style={{ background: "transparent", border: "none" }}
           />
 
-          {/* Footer */}
           <div
             style={{
               position: "absolute",
@@ -2451,6 +2444,7 @@ export default function FakeDashboard() {
               <span style={{ fontSize: 13, fontWeight: 600, color: T.text }}>
                 {NAV.find((n) => n.key === activeKey)?.label}
               </span>
+              {/* ✅ FIX 3: currentTime state dan olinadi */}
               <span
                 style={{
                   fontSize: 11,
@@ -2458,7 +2452,7 @@ export default function FakeDashboard() {
                   fontVariantNumeric: "tabular-nums",
                 }}
               >
-                {fmtTime()} UTC
+                {currentTime} UTC
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
@@ -2505,7 +2499,6 @@ export default function FakeDashboard() {
         </Layout>
       </Layout>
 
-      {/* User detail modal */}
       <Modal
         open={!!selectedUser}
         onCancel={() => setSelectedUser(null)}
