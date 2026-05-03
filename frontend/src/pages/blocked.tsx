@@ -114,7 +114,7 @@ export default function Blocked() {
               }}
             />
             <span style={{ fontSize: 12, color: "#DC2626", fontWeight: 600 }}>
-              IP mánzil bloklangan · Kirish rad etildi
+              IP mánzil bloklanǵan · Kiriw qadaǵan etildi
             </span>
           </div>
         </div>
