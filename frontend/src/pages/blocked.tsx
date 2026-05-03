@@ -63,7 +63,7 @@ export default function Blocked() {
               letterSpacing: "-0.03em",
             }}
           >
-            Kirish taqiqlandi
+            Kirisiw qadaǵan etildi
           </div>
 
           <div
@@ -75,7 +75,7 @@ export default function Blocked() {
               fontWeight: 500,
             }}
           >
-            Sizning IP manzilingiz xavfsizlik tizimi tomonidan bloklangan.
+            Siziń IP mánzilińiz qáwipsizlik sisteması tárepinen bloklanǵan.
           </div>
 
           <div
@@ -86,9 +86,7 @@ export default function Blocked() {
               lineHeight: 1.6,
             }}
           >
-            Bu saytga kirish uchun ruxsatingiz yo'q.
-            Agar bu xato deb hisoblasangiz,
-            tizim administratori bilan bog'laning.
+            Bul saytqa kiriwge ruxsatıńız joq.
           </div>
 
           {/* Status badge */}
@@ -116,7 +114,7 @@ export default function Blocked() {
               }}
             />
             <span style={{ fontSize: 12, color: "#DC2626", fontWeight: 600 }}>
-              IP manzil bloklangan · Kirish rad etildi
+              IP mánzil bloklangan · Kirish rad etildi
             </span>
           </div>
         </div>
